@@ -1,0 +1,25 @@
+
+<table>
+        <thead>
+          <tr>
+              <th>UserName </th>
+              <th>Email </th>
+              <th>Phone </th>
+			  <th>Gender </th>
+			  <th>Age </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let data of datas.slice()" >
+			
+            <td (click)="clicked(data.id)" >{{data.userName}}</td>
+            <td (click)="clicked(data.id)" >{{data.email}}</td>
+			<td (click)="clicked(data.id)" >{{data.phone}}</td>
+			<td (click)="clicked(data.id)" >{{data.gender}}</td>
+			<td (click)="clicked(data.id)" >{{data.age}}</td>
+
+			<td class="btn btn-info" (click)="deleteUser(data.id)">Delete User<td>
+          </tr>
+        </tbody>
+ </table>

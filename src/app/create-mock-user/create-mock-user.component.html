@@ -1,0 +1,74 @@
+
+
+
+
+           
+			
+			
+			
+			<!-- <div class="row"> -->
+  <div class="col s12 m7 ">
+    <div class="card horizontal card-panel hoverable">
+      <div class="card-stacked">
+        <div class="card-content ">
+          <div class="ui-g" [formGroup]="registerForm">
+                UserName:
+				<input type="text" class="form-control" name="UserName" [(ngModel)]="MockUser.UserName" formControlName="UserName">
+				<p class="text-danger" *ngIf="registerForm.controls['UserName'].hasError('required') && (registerForm.controls['UserName'].dirty || registerForm.controls['UserName'].touched)">This field is required</p>
+				
+				Email:
+				<input type="text" class="form-control" name="Email" [(ngModel)]="MockUser.Email" formControlName="Email">
+				<p class="text-danger" *ngIf="(registerForm.controls['Email'].hasError('required') && registerForm.controls['Email'].touched)">This field is required</p>
+				<p class="text-danger" *ngIf="(!registerForm.controls['Email'].valid && registerForm.controls['Email'].touched) ">Enter a valid Email</p> 
+
+				
+				Phone Number:
+				<input type="text" class="form-control" name="Phone" [(ngModel)]="MockUser.Phone" formControlName="Phone" >
+				<p class="text-danger" *ngIf="registerForm.controls['Phone'].hasError('required') && (registerForm.controls['Phone'].dirty || registerForm.controls['Phone'].touched)">
+					This field is required
+                </p>      
+                <!-- <p class="text-danger" *ngIf=" registerForm.controls['Phone'].dirty">
+                    Please enter valid phone number
+                </p> -->
+
+				Gender:
+				<input type="text" class="form-control" name="Gender" placeholder="Admin/User" [(ngModel)]="MockUser.Gender" formControlName="Gender">           
+				<p class="text-danger" *ngIf="registerForm.controls['Gender'].hasError('required') && (registerForm.controls['Gender'].dirty || registerForm.controls['Gender'].touched)">
+				This field is required
+				</p>
+				<p class="text-danger" *ngIf="registerForm.controls['Gender'].hasError('pattern') && (registerForm.controls['Gender'].dirty || registerForm.controls['Gender'].touched)">
+				Male Or Female
+				</p>
+				
+				
+				Age:
+				<input type="number" class="form-control" name="Age" [(ngModel)]="MockUser.Age" formControlName="Age">
+				<p class="text-danger" *ngIf="registerForm.controls['Age'].hasError('required') && (registerForm.controls['Age'].dirty || registerForm.controls['Age'].touched)">
+					This field is required
+                </p>      
+                <p class="text-danger" *ngIf="registerForm.controls['Age'].hasError('pattern') && (registerForm.controls['Age'].dirty || registerForm.controls['Age'].touched)">
+                    Please enter valid phone number
+                </p>
+				
+				<button type="button"  class="btn btn-success" [disabled]="!registerForm.valid" (click)="addMockUser()"> <!-- [disabled]="!registerForm.valid" -->
+					Add MockUser
+				</button>
+			
+				
+            </div>
+        </div>
+        <div class="card-action">
+          <a (click)="gotodisplay()">View All Users</a>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- </div> -->
+ 
+ 
+ 
+ 
+
+         
+ 
+ 
